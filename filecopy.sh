@@ -1,4 +1,10 @@
 #!/bin/bash
+# Massive Clouds Copyright 2013
+# Written by Christopher Mera
+# chris@massiveclouds.com
+# 
+# TODO: Exclusion lists
+
 FC_ROOT="/opt/massive"
 FC_DATADIR="${FC_ROOT}/Backups/files"
 FC_SOURCE=$1
