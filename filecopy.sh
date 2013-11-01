@@ -1,6 +1,6 @@
 #!/bin/sh
 FC_ROOT="/opt/massive"
-FC_DATADIR="${ROOT}/Backups/files"
+FC_DATADIR="$FC_ROOT/Backups/files"
 FC_SOURCE=$1
 
 date=`date "+%Y-%m-%dT%H:%M:%S"`
