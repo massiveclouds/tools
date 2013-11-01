@@ -8,6 +8,7 @@ function create_starting_point () {
 	echo "* $FC_DATADIR not found"
 	mkdir -p ${FC_DATADIR}
 	rsync -aP ${FC_SOURCE} ${FC_DATADIR}/back-$date
+	exit 0;
 }
 
 [ -d ${FC_DATADIR} ] || create_starting_point
