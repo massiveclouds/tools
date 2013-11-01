@@ -4,7 +4,7 @@ FC_DATADIR="${FC_ROOT}/Backups/files"
 FC_SOURCE=$1
 date=`date "+%Y-%m-%dT%H:%M:%S"`
 
-function create_starting_point () {
+function create_starting_point {
 	echo "* $FC_DATADIR not found"
 	mkdir -p ${FC_DATADIR}
 	rsync -aP ${FC_SOURCE} ${FC_DATADIR}/back-$date
