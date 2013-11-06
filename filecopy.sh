@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/bin/sh
 # Massive Clouds Copyright 2013
 # Written by Christopher Mera
 # chris@massiveclouds.com
 # 
 # TODO: Exclusion lists
-
+FC=`basename $0`
 FC_ROOT="/opt/massive"
 FC_DATADIR="${FC_ROOT}/Backups/files"
 FC_SOURCE=$1
@@ -31,14 +31,21 @@ fc_create_new_point () {
 	fc_post_processing
 }
 
+usage() {
+	printf "Invalid arguments!\n"
+	printf "\t$FC: <directory to backup>"
+	printf "\n"
+	exit;
+}
+
 # if no argument provided, do nothing
-[ -z ${FC_SOURCE} ] &&  echo "* No source provided" && exit 1;
+[ -z ${FC_SOURCE} ] && usage 
 
 # if directory exists then continue otherwise exit
-[ -d ${FC_SOURCE} ]  || echo "* Source doesn't exist" && exit 1;
+[ -d ${FC_SOURCE} ]  || usage
 
 # if 'Backups/files' directory doesnt exist, safe to assume no starting point
-[ ! -d ${FC_DATADIR} ] && fc_create_starting_point
+[ -d ${FC_DATADIR} ] ||  fc_create_starting_point
 
 # if 'Backups/files/current' link exists, create a new restore point
 [ -d ${FC_DATADIR}/current ] && fc_create_new_point
