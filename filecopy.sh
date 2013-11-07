@@ -4,6 +4,8 @@
 # chris@massiveclouds.com
 # 
 # TODO: Exclusion lists
+# TODO: Move configuration variables to external config file, /opt/massive/etc/?
+
 FC=`basename $0`
 FC_ROOT="/opt/massive"
 FC_DATADIR="${FC_ROOT}/Backups/files"

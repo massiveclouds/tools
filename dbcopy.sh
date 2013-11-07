@@ -3,6 +3,8 @@
 # Written by Christopher Mera
 # chris@massiveclouds.com
 # 
+# TODO: Build it
+# TODO: COnfiguration in external file
 
 DC_ROOT="/opt/massive"
 DC_DATADIR="${DC_ROOT}/Backups/db"

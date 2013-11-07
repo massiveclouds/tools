@@ -2,6 +2,7 @@
 # Massive Clouds Copyright 2013
 # Written by Christopher Mera
 # chris@massiveclouds.com
+# TODO: Move configuration to config file, /opt/massive/etc/?
 
 CC_SOURCE="/opt/massive/Backups/files/current"
 
