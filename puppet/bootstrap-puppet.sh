@@ -1,6 +1,5 @@
-echo $(/usr/bin/host mmaster01.d.mmi-nyc.com  | head -1 | /usr/bin/awk '{print $4}')
-echo $(/usr/bin/host mmaster01.d.mmi-nyc.com  | head -1 | /usr/bin/awk '{print $4}')
-perating system
+#!/bin/bash
+# update operating system
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get -y upgrade
