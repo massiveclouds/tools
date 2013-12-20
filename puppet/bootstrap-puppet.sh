@@ -21,7 +21,7 @@ hostname $(uname -n)
 
 # hosts setup 
 cat >> /etc/hosts <<-EOF
-echo $(/usr/bin/host mmaster01.d.mmi-nyc.com  | head -1 | /usr/bin/awk '{print $4}') mmaster01
+$(/usr/bin/host mmaster01.d.mmi-nyc.com  | head -1 | /usr/bin/awk '{print $4}') mmaster01
 EOF
 
 # puppet configuration
