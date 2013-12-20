@@ -4,7 +4,7 @@
 # chris@massiveclouds.com
 # TODO: Move configuration to config file, /opt/massive/etc/?
 
-CC_SOURCE="/opt/massive/Backups/files/current"
+export CC_SOURCE="/opt/massive/Backups/files/current"
 
 # Parameters for authentication to the Storage Repository
 export AWS_ACCESS_KEY_ID="***REMOVED***"
