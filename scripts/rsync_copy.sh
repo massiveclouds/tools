@@ -1,15 +1,17 @@
-#!/bin/sh
+#!/bin/bash
 # Massive Clouds Copyright 2013
 # Written by Christopher Mera
 # chris@massiveclouds.com
 # 
 # TODO: Exclusion lists
 # TODO: Move configuration variables to external config file, /opt/massive/etc/?
+source config
 
 FC=`basename $0`
-FC_ROOT="/opt/massive"
-FC_DATADIR="${FC_ROOT}/Backups/files"
-FC_SOURCE=$1
+
+#FC_ROOT="/web/data"
+#FC_DATADIR="${FC_ROOT}/backups/magento"
+#FC_SOURCE=$1
 date=`date "+%Y-%m-%dT%H:%M:%S"`
 
 fc_post_processing () {

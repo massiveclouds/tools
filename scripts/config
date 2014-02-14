@@ -1,0 +1,4 @@
+export FC_ROOT="/web/data"
+export FC_DATADIR="${FC_ROOT}/backups/magento"
+export FC_SOURCE="/var/www/***REMOVED***/public_html"
+
