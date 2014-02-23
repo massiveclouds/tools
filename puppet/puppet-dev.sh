@@ -20,11 +20,6 @@ rm -rf /var/lib/puppet/ssl
 # setup hostname
 hostname $(uname -n)
 
-# hosts setup 
-grep puppet || cat >> /etc/hosts <<-EOF 
-$(/usr/bin/host puppet.d.mmi-nyc.com  | head -1 | /usr/bin/awk '{print $4}') puppet
-EOF
-
 # puppet configuration
 grep development /etc/puppet/puppet.conf || cat >> /etc/puppet/puppet.conf <<-EOF
 [agent]
@@ -32,7 +27,5 @@ server = puppet.d.mmi-nyc.com
 environment = development
 EOF
 
-PUPPET=`which puppet`
 
-[[ -z "$PUPPET" ]] && echo its empty
 
