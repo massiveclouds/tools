@@ -27,5 +27,9 @@ server = puppet.d.mmi-nyc.com
 environment = development
 EOF
 
+# Enable the puppet client
+sed -i /etc/default/puppet -e 's/START=no/START=yes/'
 
+# start puppet at last
+service puppet start
 
