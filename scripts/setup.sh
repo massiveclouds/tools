@@ -6,10 +6,9 @@
 #
 #
 # Requirements
-echo 'deb http://repo.percona.com/apt precise main' >> /etc/apt/sources.list
-echo 'deb-src http://repo.percona.com/apt precise main' >> /etc/apt/sources.list
-
-
+do_first_run () {
+echo 'deb http://repo.percona.com/apt precise main' >> /etc/apt/sources.list.d/percona.list
+echo 'deb-src http://repo.percona.com/apt precise main' >> /etc/apt/sources.list.d/percona.list
 # Sync up
 apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 apt-get update
@@ -22,5 +21,12 @@ apt-get -y install duplicity python-boto percona-xtrabackup
 # Setup directory structure
 mkdir -p /etc/massive/config
 cp ./config /etc/massive/config
+echo "Install completed"
+echo
+exit 0
+}
 
-# 
+[ -f /etc/apt/sources.list.d/percona.list ] || do_first_run 
+echo "Already installed"
+exit -1
+

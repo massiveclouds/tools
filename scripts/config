@@ -18,7 +18,7 @@ export FC_SOURCE="/var/www/***REMOVED***/public_html"
 # KEEP_FULLS - The Period of Time You want to Keep Full Backups
 # BUCKET_NAME - The bucket created on AWS S3 where this script will dump data.
 # SRC - The path of where duplicity will read files to backup to S3 from.
-export CREDS="--user=msandbox --password=msandbox"
+export CREDS="--user=root --password=***REMOVED***"
 export PARALLEL="--parallel=10"
 export BACKUPDIR="${FC_ROOT}/backups/db"
 export INNOBACKUPEX=/usr/bin/innobackupex

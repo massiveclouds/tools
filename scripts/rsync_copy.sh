@@ -6,12 +6,7 @@
 # TODO: Exclusion lists
 # TODO: Move configuration variables to external config file, /opt/massive/etc/?
 source /etc/massive/config/config
-
 FC=`basename $0`
-
-#FC_ROOT="/web/data"
-#FC_DATADIR="${FC_ROOT}/backups/magento"
-#FC_SOURCE=$1
 date=`date "+%Y-%m-%dT%H:%M:%S"`
 
 fc_post_processing () {
@@ -43,10 +38,10 @@ usage() {
 }
 
 # if no argument provided, do nothing
-[ -z ${FC_SOURCE} ] && usage 
+# [ -z ${FC_SOURCE} ] && usage 
 
 # if directory exists then continue otherwise exit
-[ -d ${FC_SOURCE} ]  || usage
+[ -d ${FC_SOURCE} ]  || echo "Source Directory doesn't exist"
 
 # if 'Backups/files' directory doesnt exist, safe to assume no starting point
 [ -d ${FC_DATADIR} ] ||  fc_create_starting_point
