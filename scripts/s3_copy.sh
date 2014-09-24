@@ -3,24 +3,8 @@
 # Written by Christopher Mera
 # chris@massiveclouds.com
 # TODO: Move configuration to config file, /opt/massive/etc/?
+source config
 
-export CC_SOURCE="/opt/massive/Backups/files/current"
-
-# Parameters for authentication to the Storage Repository
-export AWS_ACCESS_KEY_ID="***REMOVED***"
-export AWS_SECRET_ACCESS_KEY="***REMOVED***"
-
-# Parameters for the Backup
-# 
-# FULL_INTERVAL - How often to run a Full Backup
-# KEEP_FULLS - The Period of Time You want to Keep Full Backups
-# BUCKET_NAME - The bucket created on AWS S3 where this script will dump data.
-# SRC - The path of where duplicity will read files to backup to S3 from.
-
-FULL_INTERVAL="1W"
-KEEP_FULLS="2W"
-BUCKET_NAME='***REMOVED***'
-YEAR=$(date +%Y)
 #SRC="/tmp/source"
 ###### DO NOT EDIT BELOW THIS LINE #######
 ###### DO NOT EDIT BELOW THIS LINE #######
