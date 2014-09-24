@@ -13,8 +13,14 @@ echo 'deb-src http://repo.percona.com/apt precise main' >> /etc/apt/sources.list
 # Sync up
 apt-key adv --keyserver keys.gnupg.net --recv-keys 1C4CBDCDCD2EFD2A
 apt-get update
+
 # apt-get -y upgrade
 
 # Install the binaries
 apt-get -y install duplicity python-boto percona-xtrabackup
 
+# Setup directory structure
+mkdir -p /etc/massive/config
+cp ./config /etc/massive/config
+
+# 

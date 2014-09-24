@@ -3,7 +3,7 @@
 # Written by Christopher Mera
 # chris@massiveclouds.com
 # TODO: Move configuration to config file, /opt/massive/etc/?
-source config
+source /etc/massive/config/config
 
 #SRC="/tmp/source"
 ###### DO NOT EDIT BELOW THIS LINE #######

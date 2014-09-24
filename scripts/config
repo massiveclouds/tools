@@ -3,16 +3,14 @@
 # AWS_ACCESS_KEY_ID - Self Explanatory, you need this.
 # AWS_SECRET_ACCESS_KEY - Same as above.
 # BUCKET_NAME - Location of where backup data will be dumped
-
 export AWS_ACCESS_KEY_ID="***REMOVED***"
 export AWS_SECRET_ACCESS_KEY="***REMOVED***"
 export BUCKET_NAME="***REMOVED***"
 
 # Parameters for Web Docroot Rsync Job
 export FC_ROOT="/web/data"
-export FC_DATADIR="${FC_ROOT}/backups/magento"
+export FC_DATADIR="${FC_ROOT}/backups/code/magento"
 export FC_SOURCE="/var/www/***REMOVED***/public_html"
-export CC_SOURCE="/opt/massive/Backups/files/current"
 
 # Parameters for the Backup
 # 
@@ -20,13 +18,9 @@ export CC_SOURCE="/opt/massive/Backups/files/current"
 # KEEP_FULLS - The Period of Time You want to Keep Full Backups
 # BUCKET_NAME - The bucket created on AWS S3 where this script will dump data.
 # SRC - The path of where duplicity will read files to backup to S3 from.
+export CREDS="--user=msandbox --password=msandbox"
+export PARALLEL="--parallel=10"
+export BACKUPDIR="${FC_ROOT}/backups/db"
+export INNOBACKUPEX=/usr/bin/innobackupex
+export BASEBACKDIR=$BACKUPDIR/base
 
-FULL_INTERVAL="1W"
-KEEP_FULLS="2W"
-BUCKET_NAME="***REMOVED***"
-YEAR=$(date +%Y)
-
-export FULL_INTERVAL
-export KEEP_FULLS
-export BUCKET_NAME
-export YEAR

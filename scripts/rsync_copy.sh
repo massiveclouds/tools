@@ -5,7 +5,7 @@
 # 
 # TODO: Exclusion lists
 # TODO: Move configuration variables to external config file, /opt/massive/etc/?
-source config
+source /etc/massive/config/config
 
 FC=`basename $0`
 
