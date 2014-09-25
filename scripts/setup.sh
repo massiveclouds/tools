@@ -28,5 +28,6 @@ exit 0
 
 [ -f /etc/apt/sources.list.d/percona.list ] || do_first_run 
 echo "Already installed"
-exit -1
+echo
+exit 1
 

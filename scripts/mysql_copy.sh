@@ -1,6 +1,11 @@
 #!/bin/bash
 source /etc/massive/config/config
 
+db_create_starting_point () {
+	echo "* Creating $BASEBACKDIR"
+	mkdir -p ${BASEBACKDIR}
+}
+
 DATE="`/bin/date +%Y%m%d-%H%M%S`"
 TYPE=full
 FILE="${TYPE}_${DATE}.sql"
@@ -23,12 +28,15 @@ db_create_full () {
 
 # Create a new full backup
 #  echo "$INNOBACKUPEX $DEFAULTS $CREDS $PORT $SOCKET $IBBACKUP $PARALLEL --stream=tar ./ | gzip - > $BASEBACKDIR/$FILE.gz " 
+
+
 #Uncompressed
-#  $INNOBACKUPEX $CREDS $PORT $PARALLEL $BASEBACKDIR  
+  $INNOBACKUPEX $CREDS $PORT $PARALLEL $BASEBACKDIR  
 #Compressed
-  $INNOBACKUPEX $CREDS $PORT $PARALLEL --stream=tar ./ | gzip - > $BASEBACKDIR/$FILE.gz 
+#  $INNOBACKUPEX $CREDS $PORT $PARALLEL --stream=tar ./ | gzip - > $BASEBACKDIR/$FILE.gz 
 }
 
 #Create Full Backup
+[ -d ${BASEBACKDIR} ] ||  db_create_starting_point
 db_create_full
 exit $?
