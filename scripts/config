@@ -13,7 +13,7 @@ export FC_DATADIR="${FC_ROOT}/backups/code/magento"
 # set to docroot, example: /var/www/blahblah.com/htdocs"
 export FC_SOURCE=""
 export SRC="${FC_ROOT}/backups/"
-# Parameters for the Backup
+# Parameters for the DB Backup
 # 
 # FULL_INTERVAL - How often to run a Full Backup
 # KEEP_FULLS - The Period of Time You want to Keep Full Backups
@@ -21,7 +21,7 @@ export SRC="${FC_ROOT}/backups/"
 # SRC - The path of where duplicity will read files to backup to S3 from.
 export CREDS="--user=root --password=***REMOVED***"
 export PARALLEL="--parallel=10"
-export BACKUPDIR="${FC_ROOT}/backups/db"
+export BACKUPDIR="${FC_ROOT}/backups/"
 export INNOBACKUPEX=/usr/bin/innobackupex
-export BASEBACKDIR=$BACKUPDIR/base
+export BASEBACKDIR="${BACKUPDIR}/db"
 export FULL_INTERVAL="1D"
