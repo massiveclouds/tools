@@ -3,14 +3,15 @@
 # AWS_ACCESS_KEY_ID - Self Explanatory, you need this.
 # AWS_SECRET_ACCESS_KEY - Same as above.
 # BUCKET_NAME - Location of where backup data will be dumped
-export AWS_ACCESS_KEY_ID="A***REMOVED***"
-export AWS_SECRET_ACCESS_KEY="***REMOVED***"
-export BUCKET_NAME="***REMOVED***/backup"
+export AWS_ACCESS_KEY_ID=""
+export AWS_SECRET_ACCESS_KEY=""
+export BUCKET_NAME=""
 
 # Parameters for Web Docroot Rsync Job
 export FC_ROOT="/web/data"
 export FC_DATADIR="${FC_ROOT}/backups/code/magento"
-export FC_SOURCE="/var/www/***REMOVED***/public_html"
+# set to docroot, example: /var/www/blahblah.com/htdocs"
+export FC_SOURCE=""
 export SRC="${FC_ROOT}/backups/"
 # Parameters for the Backup
 # 
