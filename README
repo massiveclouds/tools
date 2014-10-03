@@ -4,6 +4,6 @@ bootstrap-armada:
 bootstrap-sync:
 	configure a node to replicate data to cloud block storage
 
-clients:
-	client specific resources
+apphelpers:
+	applications we've worked with and processes we follow
 
