@@ -1,8 +1,9 @@
-Requirements for dbcopy.sh:
+bootstrap-armada:
+	configure a node to join armada's configuration management services
 
-Ubuntu 12.04LTS:
-deb http://repo.percona.com/apt squeeze main
-deb-src http://repo.percona.com/apt squeeze main
+bootstrap-sync:
+	configure a node to replicate data to cloud block storage
 
-Add this to /etc/apt/sources.list, replacing squeeze with the name of your distribution:
-apt-get install percona-xtrabackup
+clients:
+	client specific resources
+
