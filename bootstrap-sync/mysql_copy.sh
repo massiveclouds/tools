@@ -1,5 +1,5 @@
 #!/bin/bash
-source /etc/massive/config/config
+source /etc/massive/sync.conf
 
 db_create_starting_point () {
 	echo "* Creating $BASEBACKDIR"

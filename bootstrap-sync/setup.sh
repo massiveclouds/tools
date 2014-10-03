@@ -6,6 +6,9 @@
 #
 #
 # Requirements
+
+CONF_DIR="/etc/massive"
+BIN_DIR="/usr/local/bin"
 do_first_run () {
 echo 'deb http://repo.percona.com/apt precise main' >> /etc/apt/sources.list.d/percona.list
 echo 'deb-src http://repo.percona.com/apt precise main' >> /etc/apt/sources.list.d/percona.list
@@ -19,10 +22,9 @@ apt-get update
 apt-get -y install duplicity python-boto percona-xtrabackup
 
 # Setup directory structure
-mkdir -p /etc/massive/config
-cp ./config /etc/massive/config
+mkdir -p $CONF_DIR
+cp ./sync.conf $CONF_DIR/sync.conf
 echo "Install completed"
-echo
 exit 0
 }
 

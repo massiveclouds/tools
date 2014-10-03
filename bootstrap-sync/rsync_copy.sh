@@ -5,7 +5,7 @@
 # 
 # TODO: Exclusion lists
 # TODO: Move configuration variables to external config file, /opt/massive/etc/?
-source /etc/massive/config/config
+source /etc/massive/sync.conf
 FC=`basename $0`
 date=`date "+%Y-%m-%dT%H:%M:%S"`
 
