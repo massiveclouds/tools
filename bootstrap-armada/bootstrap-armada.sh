@@ -1,5 +1,6 @@
 #!/bin/bash
 # update operating system
+CONF_MGR="puppet.d.mmi-nyc.com"
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
@@ -23,7 +24,7 @@ hostname $(uname -n)
 # puppet configuration
 grep development /etc/puppet/puppet.conf || cat >> /etc/puppet/puppet.conf <<-EOF
 [agent]
-server = puppet.d.mmi-nyc.com
+server = ${CONF_MGR}
 environment = development
 EOF
 

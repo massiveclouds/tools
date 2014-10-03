@@ -4,11 +4,14 @@
 #
 
 # set up variables / configuration
-ADMIN_EMAILS="bmerine@manhatech.com,chris@massiveclouds.com"
+ADMIN_EMAILS="support@massiveclouds.com"
 HEADER="From: Cloud Deploy Bot <no-reply@***REMOVED***>"
+# /srv/htdocs or /var/www ?
 WEB_BASE="/var/www"
+# PATH where new repo can be found
 SYNC_FROM="/home/developer/current"
-DOMAIN="***REMOVED***"
+# URL as used in Nginx host defines
+DOMAIN=""
 
 DATE=$(date +%m%d%Y)
 REVISION=$(cat ${CODEPATH}/.revision)
@@ -50,7 +53,7 @@ function magento_remove_cache() {
 
 # the new copy created in $REAL_DOCROOT is pointed to by $FAKE_DOCROOT
 function update_link() {
-	pprint "Updating symlink for nginx for $FAKE_DOCROOT -> $REAL_DOCROOT"
+	pprint "Updating symlink for web services for $FAKE_DOCROOT -> $REAL_DOCROOT"
 	rm -rf $FAKE_DOCROOT
 	ln -sf $REAL_DOCROOT $FAKE_DOCROOT
 }
