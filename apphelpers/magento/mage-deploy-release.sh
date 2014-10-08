@@ -5,7 +5,7 @@
 
 # set up variables / configuration
 ADMIN_EMAILS="support@massiveclouds.com"
-HEADER="From: Cloud Deploy Bot <no-reply@***REMOVED***>"
+HEADER="From: Cloud Deploy Bot <no-reply@massiveclouds.com>"
 # /srv/htdocs or /var/www ?
 WEB_BASE="/var/www"
 # PATH where new repo can be found
