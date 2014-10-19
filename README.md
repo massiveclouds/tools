@@ -1,27 +1,27 @@
 OVERVIEW
 
-bootstrap-armada:
+	armada:
 	configure a node to join massive clouds armada's confmgr services
+		- simple puppet bootstrap
 
-bootstrap-sync:
+	sync:
 	basic tools to configure a node to replicate data to cloud block storage (s3 currently)
 
-apphelpers:
+	apphelpers:
 	applications we've worked with and processes we follow
 		- magento enterprise
 
 TODO
 
-bootstrap-armada:
+	armada:
 	pull data from armada web services for proper puppet host
 	
-bootstrap-sync
+	sync
 	clean up configuration file
 	improve innobackupex wrapper script (mysql_copy)
 	find a replacement for duplicity (s3_copy)
-	test the rsync script further
 	
-apphelpers:
+	apphelpers:
 	generalize the script to support a wider array of configurations
 	introduce options to better support one-off configurations
 
