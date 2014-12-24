@@ -1,14 +1,15 @@
 #!/bin/bash
 # update operating system
 CONF_MGR="puppet.d.mmi-nyc.com"
+RELEASE=$(lsb_release -c | cut -f2)
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get -y upgrade
 
 # puppet labs repo
-wget http://apt.puppetlabs.com/puppetlabs-release-precise.deb
-dpkg -i puppetlabs-release-precise.deb 
+wget http://apt.puppetlabs.com/puppetlabs-release-$RELEASE.deb
+dpkg -i puppetlabs-release-$RELEASE.deb
 
 # update for sanity, then install and stop service
 apt-get update
