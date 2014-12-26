@@ -2,6 +2,24 @@
 # update operating system
 CONF_MGR="puppet.d.mmi-nyc.com"
 RELEASE=$(lsb_release -c | cut -f2)
+ENVIRONMENT="development"
+HOSTNAME=$(hostname)
+OPTIND=1
+
+while getopts "h?s:e:" opt; do
+	case "$opt" in
+	h|\?) 
+		show_help
+		exit 0
+		;;
+	s)
+		CONF_MGR=$OPTARG
+		;;
+	e)
+		ENVIRONMENT=$OPTARG
+		;;
+	esac
+done
 
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
@@ -26,7 +44,7 @@ hostname $(uname -n)
 grep development /etc/puppet/puppet.conf || cat >> /etc/puppet/puppet.conf <<-EOF
 [agent]
 server = ${CONF_MGR}
-environment = development
+environment = ${ENVIRONMENT}
 EOF
 
 # Enable the puppet client
