@@ -2,7 +2,7 @@
 # update operating system
 CONF_MGR="puppet.d.mmi-nyc.com"
 RELEASE=$(lsb_release -c | cut -f2)
-ENVIRONMENT="development"
+ENVIRONMENT="armada"
 HOSTNAME=$(hostname)
 OPTIND=1
 
